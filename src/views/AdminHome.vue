@@ -336,7 +336,7 @@ export default {
     methods: {
         obtieneVocablos() {
             axios
-                .get("http://localhost:8181/api/v1/vocablos")
+                .get("http://54.166.240.143:8181/api/v1/vocablos")
                 .then((response) => {
                     if (response.status === 200) {
                         this.vocablos = response.data;
@@ -351,7 +351,7 @@ export default {
         },
         verDetallesVocablo(vocablo) {
             axios
-                .get("http://localhost:8181/api/v1/vocablos/" + vocablo)
+                .get("http://54.166.240.143:8181/api/v1/vocablos/" + vocablo)
                 .then((response) => {
                     if (response.status === 200) {
                         this.vocabloTitulo = response.data.vocablo;
@@ -371,7 +371,7 @@ export default {
         },
         borrarVocablo(vocablo) {
             axios
-                .delete("http://localhost:8181/api/v1/vocablos/" + vocablo)
+                .delete("http://54.166.240.143:8181/api/v1/vocablos/" + vocablo)
                 .then((response) => {
                     if(response.status === 200) {
                         this.$refs.sbcomponent.createSnackBar(
@@ -411,7 +411,7 @@ export default {
         agregar() {
             if (this.validAgregaForm) {
                 axios
-                    .post("http://localhost:8181/api/v1/vocablos/", this.createForm())
+                    .post("http://54.166.240.143:8181/api/v1/vocablos/", this.createForm())
                     .then((response) => {
                         if (response.status === 201) {
                             this.$refs.sbcomponent.createSnackBar(
@@ -437,7 +437,7 @@ export default {
         },
         setEditar(vocablo) {
             axios
-                .get("http://localhost:8181/api/v1/vocablos/" + vocablo)
+                .get("http://54.166.240.143:8181/api/v1/vocablos/" + vocablo)
                 .then((response) => {
                     if (response.status === 200) {
                         this.vocabloEditar = response.data.vocablo;
@@ -468,7 +468,7 @@ export default {
         editar(vocablo) {
             if (this.validEditaForm) {
                 axios
-                    .put("http://localhost:8181/api/v1/vocablos/" + vocablo, this.createEditForm())
+                    .put("http://54.166.240.143:8181/api/v1/vocablos/" + vocablo, this.createEditForm())
                     .then((response) => {
                         console.log(response.status);
                         if (response.status === 200) {

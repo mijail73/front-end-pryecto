@@ -93,7 +93,7 @@ export default {
   methods: {
     obtieneVocablos() {
       axios
-        .get("http://localhost:8181/api/v1/vocablos")
+        .get("http://54.166.240.143:8181/api/v1/vocablos")
         .then((response) => {
           if (response.status === 200) {
             this.vocablos = response.data;
@@ -108,7 +108,7 @@ export default {
     },
     verDetallesVocablo(vocablo) {
       axios
-        .get("http://localhost:8181/api/v1/vocablos/" + vocablo)
+        .get("http://54.166.240.143:8181/api/v1/vocablos/" + vocablo)
         .then((response) => {
           if (response.status === 200) {
             this.vocabloTitulo = response.data.vocablo;
