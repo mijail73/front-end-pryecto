@@ -97,6 +97,7 @@ export default {
       this.dialog = true;
     },
     logout() {
+      location.reload();
       this.tipoUsuario = "";
       this.password = "";
       this.$refs.sbcomponent.createSnackBar(
